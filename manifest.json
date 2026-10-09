@@ -1,0 +1,19 @@
+{
+  "name": "SolidCAD Mobile",
+  "short_name": "SolidCAD",
+  "description": "نمونه اولیه طراحی سه‌بعدی CAD برای اندروید",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0c121b",
+  "theme_color": "#101722",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#101722"><meta name="description" content="SolidCAD Mobile - نمونه اولیه طراحی سه‌بعدی برای گوشی">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg">
+<title>SolidCAD Mobile</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="brand"><span class="cube">◆</span><div><b>SolidCAD</b><small>Mobile CAD Studio</small></div></div><div class="head-actions"><button id="saveBtn">ذخیره</button><button id="installBtn" hidden>نصب برنامه</button></div></header>
+<main>
+<section class="viewport-wrap"><div id="viewport"></div>
+<div class="view-tools"><button data-view="iso" title="ایزومتریک">ISO</button><button data-view="top">بالا</button><button data-view="front">جلو</button><button data-view="right">راست</button></div>
+<div class="hud"><span id="status">آماده طراحی</span><span>mm</span></div></section>
+<section class="toolbox">
+<div class="tabs"><button class="tab active" data-tab="model">مدل‌سازی</button><button class="tab" data-tab="sketch">اسکچ</button><button class="tab" data-tab="project">پروژه</button></div>
+<div class="panel active" id="model">
+<div class="tool-grid">
+<button class="tool" id="boxTool"><strong>▰</strong><span>مکعب</span></button>
+<button class="tool" id="cylTool"><strong>◉</strong><span>استوانه</span></button>
+<button class="tool" id="sphereTool"><strong>●</strong><span>کره</span></button>
+<button class="tool" id="holeTool"><strong>⊖</strong><span>سوراخ ساده</span></button>
+</div>
+<div class="field-row"><label>عرض <input id="width" type="number" min="1" value="40"></label><label>عمق <input id="depth" type="number" min="1" value="30"></label><label>ارتفاع <input id="height" type="number" min="1" value="20"></label></div>
+<button class="primary full" id="applyDims">اعمال ابعاد روی مکعب انتخابی</button>
+<p class="hint">برای انتخاب یک قطعه روی آن لمس کن. با دو انگشت زوم و با یک انگشت چرخش انجام می‌شود.</p>
+</div>
+<div class="panel" id="sketch">
+<p class="hint">اسکچ دوبعدی ساده روی صفحه XY؛ ابزار را انتخاب کن و روی صفحه بکش یا لمس کن.</p>
+<div class="tool-grid">
+<button class="tool" id="lineTool"><strong>／</strong><span>خط</span></button>
+<button class="tool" id="rectTool"><strong>□</strong><span>مستطیل</span></button>
+<button class="tool" id="circleTool"><strong>○</strong><span>دایره</span></button>
+<button class="tool" id="selectTool"><strong>↖</strong><span>انتخاب/چرخش</span></button>
+</div>
+<div class="field-row"><label>ضخامت Extrude <input id="extrudeDepth" type="number" min="1" value="10"></label></div>
+<button class="primary full" id="extrudeSketch">Extrude اسکچ</button>
+<button class="secondary full" id="clearSketch">پاک‌کردن خطوط اسکچ</button>
+<p class="hint">نسخه اولیه: Extrude برای مستطیل و دایره اجرا می‌شود؛ خط‌ها فعلاً راهنمای ترسیم‌اند.</p>
+</div>
+<div class="panel" id="project">
+<div class="tool-grid">
+<button class="tool" id="newBtn"><strong>＋</strong><span>پروژه جدید</span></button>
+<button class="tool" id="undoBtn"><strong>↶</strong><span>واگرد</span></button>
+<button class="tool" id="exportBtn"><strong>⇩</strong><span>خروجی STL</span></button>
+<button class="tool" id="jsonBtn"><strong>▤</strong><span>خروجی پروژه</span></button>
+</div>
+<label class="file-label">بازکردن پروژه JSON<input type="file" id="openFile" accept=".json,application/json"></label>
+<div class="project-info"><b>پروژه محلی</b><span id="objectCount">۰ قطعه</span><span id="saveState">هنوز ذخیره نشده</span></div>
+<p class="hint">ذخیره خودکار در حافظه مرورگر همین گوشی انجام می‌شود. برای جلوگیری از گم‌شدن پروژه، فایل JSON هم خروجی بگیر.</p>
+</div>
+</section>
+</main>
+<footer>SolidCAD Mobile • نمونه اولیه CAD تحت وب</footer>
+<script type="module" src="app.js"></script>
+</body></html>
